@@ -1,0 +1,46 @@
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - find_time_zone
+  - find_time_zone_location
+  - city_info
+  - thanks
+
+responses:
+  utter_greet:
+  - text: "Hey! I am time zone bot!"
+
+  utter_great:
+  - text: "Hey! I am time zone bot!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_finding_time_zone:
+  - text: "Just a sec, I m on it to find timezone of {city}!"
+
+  utter_ask_location:
+  - text: "For which city you need time zone?"
+
+  utter_welcome:
+  - text: "Welcome, try again for more fun!"
+
+
+entities:
+  - city
+
+actions:
+  - action_show_time_zone
+
+slots:
+  city:
+    type: text
+    auto_fill: True
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
